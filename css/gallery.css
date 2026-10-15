@@ -50,16 +50,14 @@ main
             position: fixed;
             top: 50%;
             left: 50%;  
-            transform: translate(-50%, -50%); /* Centre parfaitement l'image au milieu */
-            width: 50vw;                      /* Prend 50% de la largeur de l'écran */
-            height: auto;                     /* Conserve les proportions originales */
-            max-height: 80vh;                 /* Empêche de déborder en hauteur si l'image est verticale */
-            object-fit: contain;              /* Évite toute déformation */
-            z-index: 999;                     /* Passe par-dessus le header et la vidéo */
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.6); /* Ajoute une ombre pour détacher l'image du fond */
-            border-radius: 4px;               /* Adoucit légèrement les angles en plein écran */
+            transform: translate(-50%, -45%);
+            width: 100%;                      
+            height: auto;                
+            max-height: 80vh;              
+            object-fit: contain;             
+            z-index: 999;                  ; 
+            border-radius: 4px;               
         }
-
 
         h4
         {
@@ -101,10 +99,3 @@ main
 
     }
 }
-
-
-
-
-
-
-
