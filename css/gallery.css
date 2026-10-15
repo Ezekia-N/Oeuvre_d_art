@@ -14,7 +14,7 @@ body
 main
 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-template-rows: auto;
     gap: 20px;
     margin-top: 80px;
@@ -37,7 +37,29 @@ main
             height: 250px;
             border-radius: 10px;
             align-self: center;
+            transition: transform 0.3s ease, width 0.3s ease; 
         }
+
+        #plein-ecran
+        {
+            display: none;
+        }
+
+        #plein-ecran:checked + label img
+        {
+            position: fixed;
+            top: 50%;
+            left: 50%;  
+            transform: translate(-50%, -50%); /* Centre parfaitement l'image au milieu */
+            width: 50vw;                      /* Prend 50% de la largeur de l'écran */
+            height: auto;                     /* Conserve les proportions originales */
+            max-height: 80vh;                 /* Empêche de déborder en hauteur si l'image est verticale */
+            object-fit: contain;              /* Évite toute déformation */
+            z-index: 999;                     /* Passe par-dessus le header et la vidéo */
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.6); /* Ajoute une ombre pour détacher l'image du fond */
+            border-radius: 4px;               /* Adoucit légèrement les angles en plein écran */
+        }
+
 
         h4
         {
@@ -80,14 +102,7 @@ main
     }
 }
 
-@media (max-width: 768px)
-{
-    main
-    {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 50px;
-    }
-}
+
 
 
 
